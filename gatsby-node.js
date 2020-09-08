@@ -18,6 +18,7 @@ exports.createPages = ({ graphql, actions }) => {
           photo {
             file {
               url
+              fileName
             }
           }
         }

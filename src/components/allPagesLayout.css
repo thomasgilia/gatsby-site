@@ -1,8 +1,18 @@
 body {
-margin: auto;
+
+    margin: auto;
+padding: 20px;
     background-color:grey;
   
-}
+} 
+.container{
+    background-color: grey;
+    text-align:center; 
+    border-radius: 10px; 
+    padding: 4px;
+    max-width: 70%; height: auto;
+  }
+
 .btn-warning {
     background-color: yellow;
     border-color: grey

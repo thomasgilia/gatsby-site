@@ -1,6 +1,8 @@
 import React from "react"
 import AllPagesLayout from "../components/allPagesLayout"
 import { graphql } from "gatsby";
+import { Link } from "@reach/router"
+
 //the gatsby-node.js is used to do certain functionalities - low level code/node modules etc.
 //allows us to add stuff for build process
 //in this case we're using createPage to auto create pages from contentful data
@@ -10,14 +12,24 @@ import { graphql } from "gatsby";
 //each record in query will get own page
 
 export default function recipeTemplate({ data }) {
-    let item = data.contentfulRecipes;
-    return (
-        <AllPagesLayout>
-            <h4> {item.title}</h4>
-            <p> {item.recipe.recipe}</p>
-            <img src={item.photo[0].file.url}></img>>
-        </AllPagesLayout>
-    )
+  let item = data.contentfulRecipes;
+  return (
+    <>
+
+      <AllPagesLayout>
+        <div class="container">
+        <br></br>
+        <h4> {item.title}</h4>
+        <br></br>
+        <p> {item.recipe.recipe}</p>
+        <img class="img-fluid" src={item.photo[0].file.url} alt=""></img>
+        <br></br>
+        <br></br>
+        <Link class="btn btn-warning" to="/">Back</Link>
+        </div>
+      </AllPagesLayout>
+    </>
+  )
 }
 
 //for the query thats coming your way, there is a slug value
@@ -38,6 +50,7 @@ query recipeQuery($slug: String!){
             photo {
               file {
                 url
+                fileName
               }
             }
         }

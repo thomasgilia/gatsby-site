@@ -6,6 +6,7 @@ import "./allPagesLayout.css"
 //goal adds: navigation menu, credits option
 export default function AllPagesLayout({children}) {
     return (
+        <div class="container">
         <div>
            <StaticQuery
 
@@ -24,7 +25,7 @@ export default function AllPagesLayout({children}) {
             />
  {children}
         </div>
-   
+        </div>
     )
 }
 //can render with <header></header>around that line of code in render to create a component
